@@ -3,6 +3,9 @@ ARG codeServerVersion=docker
 ARG vscodeVersion
 ARG githubToken
 
+ADD sources.list /etc/apt/
+COPY pip.conf /etc/pip.conf
+
 # Install VS Code's deps. These are the only two it seems we need.
 RUN apt-get update && apt-get install -y \
 	libxkbfile-dev \
