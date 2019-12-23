@@ -14,6 +14,8 @@ RUN apt-get update && apt-get install -y \
 # Ensure latest yarn.
 RUN npm install -g yarn@1.13
 
+RUN yarn config set registry https://registry.npm.taobao.org/
+
 WORKDIR /src
 COPY . .
 
